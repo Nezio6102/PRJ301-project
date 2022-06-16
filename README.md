@@ -1,8 +1,7 @@
 # PRJ301-project
 A webapp to sell fruit using Java and HTML
 
-
-I.Main expected parts of the web app:
+I. Main expected parts of the web app:
   1. A login and register page
       - Link to a reset password page
   2. Main index page
@@ -11,6 +10,8 @@ I.Main expected parts of the web app:
   5. User infomation
   6. Added to cart page
   7. Checkout page
+
+
 II. Pages' detail:
   1. Login and register page:
     - Using form to have user account and password input.
