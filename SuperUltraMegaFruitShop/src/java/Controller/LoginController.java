@@ -5,12 +5,17 @@
 package Controller;
 
 import Model.UserDAO;
+import jakarta.servlet.ServletContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpSessionContext;
+import jakarta.websocket.Session;
+import java.util.Enumeration;
 
 /**
  *
@@ -34,19 +39,37 @@ public class LoginController extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             String account = request.getParameter("account");
             String pass = request.getParameter("pass");
-
+            HttpSession session = request.getSession();
             UserDAO u = new UserDAO();
-            if (request.getParameter("forgotPass")!=null){
+            if (request.getParameter("forgotPass") != null) {
                 request.getRequestDispatcher("forgotPassword.jsp").forward(request, response);
             }
             if (request.getParameter("login") != null) {
-                 if(account.isEmpty()||pass.isEmpty()){
+                if (account.isEmpty() || pass.isEmpty()) {
                     request.setAttribute("returnMsg", "Fill all the form please");
                     request.setAttribute("retUsername", account);
                     request.getRequestDispatcher("Login.jsp").forward(request, response);
                 }
                 if (u.checkCredential(account, pass)) {
-                    request.getRequestDispatcher("Home.jsp").forward(request, response);
+                    //System.out.println(u.checkRole(account));
+                    session.setAttribute("account", account);
+                    session.setAttribute("loginText", "Logout");
+                    switch (u.checkRole(account)) {
+
+                        case "admin":
+                            //request.setAttribute(pass, u);
+                            response.sendRedirect("AdminIndex.jsp");
+                            break;
+
+                        case "Customer":
+                            request.getRequestDispatcher("Home.jsp").forward(request, response);
+                            break;
+                        case "shipper":
+                            request.getRequestDispatcher("TransportCenter.jsp").forward(request, response);
+                            break;
+                        default:
+                            throw new AssertionError();
+                    }
                 } else {
                     if (u.checkIfAccountExist(account)) {
                         request.setAttribute("returnMsg", "Wrong Password");

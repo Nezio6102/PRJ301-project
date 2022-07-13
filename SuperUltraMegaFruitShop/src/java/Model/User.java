@@ -54,6 +54,11 @@ public class User {
         return fullname;
     }
 
+    @Override
+    public String toString() {
+        return "User{" + "userID=" + userID + ", account=" + account + ", password=" + password + ", fullname=" + fullname + ", email=" + email + ", city=" + city + ", role=" + role + ", phoneNumber=" + phoneNumber + '}';
+    }
+
     public void setFullname(String fullname) {
         this.fullname = fullname;
     }

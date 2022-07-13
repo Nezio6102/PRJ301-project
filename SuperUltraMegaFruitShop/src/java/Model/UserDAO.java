@@ -8,6 +8,7 @@ import context.DBContext;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -15,6 +16,28 @@ import java.util.Random;
  * @author Nezio
  */
 public class UserDAO {
+
+    public User getUserInfo(String account) {
+        try {
+            String sql;
+            stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            if (account.contains("@")) {
+                sql = "select * from account where email = '" + account + "'";
+            } else {
+                sql = "select * from account where username ='" + account + "'";
+            }
+            rs = stm.executeQuery(sql);
+            while (rs.next()) {
+                User u = new User(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(5));
+                return u;
+            }
+        } catch (Exception e) {
+            System.out.println("Check credential err");
+        }
+
+        return null;
+    }
+        
 
     Connection cnn; //ket noi co so du lieu(CSDL)
     Statement stm; //thuc hien cac cau lenh sql
@@ -139,6 +162,64 @@ public class UserDAO {
             System.out.println("Update pass success");
         } catch (Exception e) {
             System.out.println("changepass Error:"+e.getMessage());
+        }
+    }
+
+    public String checkRole(String account) {
+        try {
+            String sql;
+            stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            if (account.contains("@")) {
+                sql = "select * from account where email = '" + account + "'";
+            } else {
+                sql = "select * from account where username ='" + account + "'";
+            }
+            rs = stm.executeQuery(sql);
+            while (rs.next()) {
+                return rs.getString("role");
+            }
+            
+        } catch (Exception e) {
+            System.out.println("Check credential err");
+        }
+        return "";
+    }
+
+    public ArrayList<User> getAll() {
+        ArrayList<User> list = new ArrayList<User>();
+        try {
+            stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            String strSelect = "select * from account";
+            rs = stm.executeQuery(strSelect);
+            while (rs.next()) {
+                String id, username,password , fullname, phone,email,city,role;
+                id = String.valueOf(rs.getInt("a_id"));
+                username = rs.getString("username");
+                password = rs.getString("password");
+                fullname = rs.getString("fullname");
+                phone = rs.getString("phone");
+                email = rs.getString("email");
+                city = rs.getString("city");
+                role = rs.getString("role");
+                User u=new User(id, username, password, fullname, email, city, role, phone);
+                list.add(u);
+                System.out.println(u.toString());
+            }
+        } catch (Exception e) {
+            System.out.println("getAll err: " + e.getMessage());
+        }
+
+        return list;
+    }
+
+    public void deleteUser(String id) {
+        try {
+            stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            String strDelete = "Delete from account where a_id='" + id + "'";
+            stm.execute(strDelete);
+
+        } catch (Exception e) {
+            System.out.println("DelbyID error " + e.getMessage());
         }
     }
 
