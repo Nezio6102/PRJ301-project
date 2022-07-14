@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>src/java/Model/ProductDAO.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>214</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/ielts/Learn_javaWEB/RV%20HTML-CSS/PRJ301-project/SuperUltraMegaFruitShop/src/java/Controller/LogoutControll.java</file>
-            <file>file:/E:/ielts/Learn_javaWEB/RV%20HTML-CSS/PRJ301-project/SuperUltraMegaFruitShop/web/Login.jsp</file>
-            <file>file:/E:/ielts/Learn_javaWEB/RV%20HTML-CSS/PRJ301-project/SuperUltraMegaFruitShop/src/java/Controller/CheckoutControll.java</file>
-            <file>file:/E:/ielts/Learn_javaWEB/RV%20HTML-CSS/PRJ301-project/SuperUltraMegaFruitShop/src/java/Model/UserDAO.java</file>
-            <file>file:/E:/ielts/Learn_javaWEB/RV%20HTML-CSS/PRJ301-project/SuperUltraMegaFruitShop/src/java/Controller/LoginController.java</file>
-            <file>file:/E:/ielts/Learn_javaWEB/RV%20HTML-CSS/PRJ301-project/SuperUltraMegaFruitShop/web/components/header.jsp</file>
-            <file>file:/E:/ielts/Learn_javaWEB/RV%20HTML-CSS/PRJ301-project/SuperUltraMegaFruitShop/src/java/Controller/showCartControll.java</file>
-            <file>file:/E:/ielts/Learn_javaWEB/RV%20HTML-CSS/PRJ301-project/SuperUltraMegaFruitShop/web/cart.jsp</file>
-            <file>file:/E:/ielts/Learn_javaWEB/RV%20HTML-CSS/PRJ301-project/SuperUltraMegaFruitShop/web/AdminManagement.jsp</file>
-            <file>file:/E:/ielts/Learn_javaWEB/RV%20HTML-CSS/PRJ301-project/SuperUltraMegaFruitShop/src/java/Controller/CartControll.java</file>
+            <file>file:/E:/HOCTAP/HomeWk/PRJ/Project/FINALPRJ/Git/PRJ301-project/SuperUltraMegaFruitShop/src/java/Model/UserDAO.java</file>
+            <file>file:/E:/HOCTAP/HomeWk/PRJ/Project/FINALPRJ/Git/PRJ301-project/SuperUltraMegaFruitShop/src/java/Controller/adminController.java</file>
+            <file>file:/E:/HOCTAP/HomeWk/PRJ/Project/FINALPRJ/Git/PRJ301-project/SuperUltraMegaFruitShop/web/AdminIndex.jsp</file>
+            <file>file:/E:/HOCTAP/HomeWk/PRJ/Project/FINALPRJ/Git/PRJ301-project/SuperUltraMegaFruitShop/src/java/Controller/AdminTableController.java</file>
+            <file>file:/E:/HOCTAP/HomeWk/PRJ/Project/FINALPRJ/Git/PRJ301-project/SuperUltraMegaFruitShop/src/java/Controller/ShopControll.java</file>
+            <file>file:/E:/HOCTAP/HomeWk/PRJ/Project/FINALPRJ/Git/PRJ301-project/SuperUltraMegaFruitShop/web/shop.jsp</file>
+            <file>file:/E:/HOCTAP/HomeWk/PRJ/Project/FINALPRJ/Git/PRJ301-project/SuperUltraMegaFruitShop/src/java/Controller/UpdateController.java</file>
+            <file>file:/E:/HOCTAP/HomeWk/PRJ/Project/FINALPRJ/Git/PRJ301-project/SuperUltraMegaFruitShop/src/java/Model/ProductDAO.java</file>
         </group>
     </open-files>
 </project-private>

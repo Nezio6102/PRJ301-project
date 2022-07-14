@@ -19,7 +19,7 @@ import java.util.Map;
  *
  * @author duonn
  */
-public class UpdateQuantityCartControll extends HttpServlet {
+public class DeleteallCart extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,29 +34,17 @@ public class UpdateQuantityCartControll extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            int productId = Integer.parseInt(request.getParameter("productId"));
-            int quantity = Integer.parseInt(request.getParameter("quantity"));
-            if (quantity >= 1) {
-                HttpSession session = request.getSession();
-                Map<Integer, Cartt> carts = (Map<Integer, Cartt>) session.getAttribute("carts");
-                if (carts == null) {
-                    carts = new LinkedHashMap<>();
-                }
+            HttpSession session = request.getSession();
 
-                if (carts.containsKey(productId)) {
-                    carts.get(productId).setQuantity(quantity);
-                }
-
-                session.setAttribute("carts", carts);
-                response.sendRedirect("carts");
-            } else {
-                String mess = "Quanlity must >0 ";
-                request.setAttribute("mess", mess);
-                request.getRequestDispatcher("cart.jsp").forward(request, response);
+            Map<Integer, Cartt> carts = (Map<Integer, Cartt>) session.getAttribute("carts");
+            if (carts == null) {
+                carts = new LinkedHashMap<>();
             }
-        }
+            carts.clear();
 
+            session.setAttribute("carts", carts);
+            response.sendRedirect("carts");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

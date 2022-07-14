@@ -18,6 +18,7 @@ import java.util.Random;
  */
 public class UserDAO {
 
+//    static final String account = "user01";
     public User getUserInfo(String account) {
         try {
             String sql;
@@ -252,5 +253,12 @@ public class UserDAO {
         }
     }
 
-   
+    public static void main(String[] args) {
+        UserDAO dao = new UserDAO();
+        User u = dao.getUserInfo("user03");
+        System.out.println(u.getUserID());
+        int i = Integer.parseInt(u.getUserID());
+        System.out.println(i);
+    }
+
 }
