@@ -28,6 +28,10 @@
         <servlet-name>EditController</servlet-name>
         <servlet-class>Controller.AdminTableController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LogoutControll</servlet-name>
+        <servlet-class>Controller.LogoutControll</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/LoginController</url-pattern>
@@ -135,6 +139,10 @@
     <servlet-mapping>
         <servlet-name>CheckoutControll</servlet-name>
         <url-pattern>/checkout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutControll</servlet-name>
+        <url-pattern>/logout</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

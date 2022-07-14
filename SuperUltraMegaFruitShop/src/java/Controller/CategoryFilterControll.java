@@ -14,8 +14,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.util.List;
-
 
 /**
  *
@@ -36,14 +36,15 @@ public class CategoryFilterControll extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
+            HttpSession session = request.getSession();
             int categoryId = Integer.parseInt(request.getParameter("cateId"));
             CategoryDao cateDao = new CategoryDao();
             List<Categorise> listCate = cateDao.getAllCate();
             List<Products> listProducts = new ProductDAO().getProductsByCategoryId(categoryId);
-            
+
             request.setAttribute("Categorise", listCate);
             request.setAttribute("listAllProducts", listProducts);
-
+            session.setAttribute("UrlHistory", "filter-category?cateId=" + categoryId);
             request.getRequestDispatcher("shop.jsp").forward(request, response);
         }
     }

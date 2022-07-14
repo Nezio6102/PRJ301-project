@@ -30,10 +30,19 @@
                             <li><a href="shop">Shop</a>
                             </li>
                             <li>
-                                <div class="header-icons">
-                                    <button type="button" onclick="location.href='Login.jsp'" class="btn btn-outline-primary">${sessionScope.loginText}</button>	
-                                    <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-                                </div>
+                                <c:if test="${sessionScope.account != null}">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Hello ${sessionScope.account}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="logout">Logout</a>
+                                </li> 
+                            </c:if>
+                            <c:if test="${sessionScope.account == null}">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Login.jsp">Login</a>
+                                </li>
+                            </c:if>
                             </li>
                             <li>
                                 <form class="d-flex">

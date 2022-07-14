@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -37,7 +38,6 @@ public class UserDAO {
 
         return null;
     }
-        
 
     Connection cnn; //ket noi co so du lieu(CSDL)
     Statement stm; //thuc hien cac cau lenh sql
@@ -126,42 +126,42 @@ public class UserDAO {
 
             stm.execute(sql);
         } catch (Exception e) {
-            System.out.println("Save error:"+e.getMessage());
+            System.out.println("Save error:" + e.getMessage());
         }
     }
 
     public boolean checkPhone(String phone) {
-        for(int i=0;i<phone.length();i++){
-            if(phone.charAt(i)<'0'||phone.charAt(i)>'9'){
+        for (int i = 0; i < phone.length(); i++) {
+            if (phone.charAt(i) < '0' || phone.charAt(i) > '9') {
                 return false;
             }
-            
+
         }
         return true;
     }
 
     public void saveCredential(String username, String password, String fullname, String phone, String email, String address, String role) {
-       int id = createID();
+        int id = createID();
         try {
             String sql;
             stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
 
-            sql = "insert into account values ('" + id + "',N'" + username + "',N'" + password + "',N'"+fullname+"',N'"+phone+"',N'"+email+"',N'"+address+"',N'" + role + "')";
+            sql = "insert into account values ('" + id + "',N'" + username + "',N'" + password + "',N'" + fullname + "',N'" + phone + "',N'" + email + "',N'" + address + "',N'" + role + "')";
 
             stm.execute(sql);
         } catch (Exception e) {
-            System.out.println("Save error:"+e.getMessage());
+            System.out.println("Save error:" + e.getMessage());
         }
     }
 
     public void updatePass(String email, String newPass) {
         try {
-            stm=cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
-            String strUpdate="update account set password='"+newPass+"' where email='"+email+"'";
+            stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            String strUpdate = "update account set password='" + newPass + "' where email='" + email + "'";
             stm.execute(strUpdate);
             System.out.println("Update pass success");
         } catch (Exception e) {
-            System.out.println("changepass Error:"+e.getMessage());
+            System.out.println("changepass Error:" + e.getMessage());
         }
     }
 
@@ -178,7 +178,7 @@ public class UserDAO {
             while (rs.next()) {
                 return rs.getString("role");
             }
-            
+
         } catch (Exception e) {
             System.out.println("Check credential err");
         }
@@ -192,7 +192,7 @@ public class UserDAO {
             String strSelect = "select * from account";
             rs = stm.executeQuery(strSelect);
             while (rs.next()) {
-                String id, username,password , fullname, phone,email,city,role;
+                String id, username, password, fullname, phone, email, city, role;
                 id = String.valueOf(rs.getInt("a_id"));
                 username = rs.getString("username");
                 password = rs.getString("password");
@@ -201,7 +201,7 @@ public class UserDAO {
                 email = rs.getString("email");
                 city = rs.getString("city");
                 role = rs.getString("role");
-                User u=new User(id, username, password, fullname, email, city, role, phone);
+                User u = new User(id, username, password, fullname, email, city, role, phone);
                 list.add(u);
                 System.out.println(u.toString());
             }
@@ -223,4 +223,5 @@ public class UserDAO {
         }
     }
 
+   
 }

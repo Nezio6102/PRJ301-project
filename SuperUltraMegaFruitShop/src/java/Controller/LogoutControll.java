@@ -4,21 +4,19 @@
  */
 package Controller;
 
-import Model.ProductDAO;
-import Model.Products;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.List;
+import jakarta.servlet.http.HttpSession;
 
 /**
  *
  * @author duonn
  */
-public class DetailControll extends HttpServlet {
+public class LogoutControll extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,14 +32,11 @@ public class DetailControll extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            int productId = Integer.parseInt(request.getParameter("productId"));
+            HttpSession session = request.getSession();
+            session.removeAttribute("account");
 
-            Products product = new ProductDAO().getProductById(productId);
-            List<Products> listProductRandom = new ProductDAO().getProductRandom();
-            request.setAttribute("product", product);
-            request.setAttribute("ListR", listProductRandom);
-            request.getSession().setAttribute("UrlHistory", "detail?productId=" + productId);
-            request.getRequestDispatcher("detail.jsp").forward(request, response);
+            session.removeAttribute("carts");
+            response.sendRedirect("shop");
         }
     }
 

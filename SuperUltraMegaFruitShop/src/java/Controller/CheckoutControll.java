@@ -97,6 +97,8 @@ public class CheckoutControll extends HttpServlet {
         //processRequest(request, response);
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
+        HttpSession session = request.getSession();
+        User u = new UserDAO().getUserInfo(String.valueOf(session.getAttribute("account")));
         String name = request.getParameter("name");
         String email = request.getParameter("email");
         String address = request.getParameter("address");
@@ -108,7 +110,6 @@ public class CheckoutControll extends HttpServlet {
         Shipng shipng = new Shipng(name, email, phone, address);
         int shipingId = new ShipngDao().createReturnId(shipng);
         //luu order
-        HttpSession session = request.getSession();
         Map<Integer, Cartt> carts = (Map<Integer, Cartt>) session.getAttribute("carts");
         if (carts == null) {
             carts = new LinkedHashMap<>();
@@ -123,7 +124,7 @@ public class CheckoutControll extends HttpServlet {
 
         }
 
-        Orders od = new Orders(1, totalPrice, shipingId, note);
+        Orders od = new Orders(Integer.parseInt(u.getUserID()), totalPrice, shipingId, note);
         int OrderId = new OrderDao().createReturnID(od);
 
         //luu orderdetail

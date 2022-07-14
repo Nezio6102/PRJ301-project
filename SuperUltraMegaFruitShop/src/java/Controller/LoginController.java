@@ -53,7 +53,7 @@ public class LoginController extends HttpServlet {
                 if (u.checkCredential(account, pass)) {
                     //System.out.println(u.checkRole(account));
                     session.setAttribute("account", account);
-                    session.setAttribute("loginText", "Logout");
+                    session.setAttribute("loginText", "LDogout");
                     switch (u.checkRole(account)) {
 
                         case "admin":
