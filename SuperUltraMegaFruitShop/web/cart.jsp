@@ -93,6 +93,7 @@
                                         </thead>
                                         <tbody>
                                             <c:forEach var="c" items="${carts}">
+
                                             <form action="update-quantity">
                                                 <tr class="table-body-row">
                                                 <input type="hidden" name="productId" value="${c.value.product.p_id}">
@@ -107,6 +108,10 @@
                                         </c:forEach>
                                         </tbody>
                                     </table>
+                                    <a href="delete-cart-all" class="btn btn-outline-danger m-3"><i class="bi bi-trash"></i>Delete all cart</a>
+
+
+                                    <h5 class="text-center text-danger">${mess}</h5>
 
 
                                 </div>

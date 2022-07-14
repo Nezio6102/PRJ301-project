@@ -32,6 +32,10 @@
         <servlet-name>LogoutControll</servlet-name>
         <servlet-class>Controller.LogoutControll</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteallCart</servlet-name>
+        <servlet-class>Controller.DeleteallCart</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/LoginController</url-pattern>
@@ -143,6 +147,10 @@
     <servlet-mapping>
         <servlet-name>LogoutControll</servlet-name>
         <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteallCart</servlet-name>
+        <url-pattern>/delete-cart-all</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

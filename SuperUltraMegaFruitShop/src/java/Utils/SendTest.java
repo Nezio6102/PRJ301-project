@@ -4,13 +4,12 @@
  */
 package Utils;
 
-
-
 /**
  *
  * @author Nezio
  */
 public class SendTest {
+
     public static void main(String[] args) throws Exception {
         Utils.SendEmail.SendMail("vietmqhe161840@fpt.edu.vn", "FUCK YOU");
     }
