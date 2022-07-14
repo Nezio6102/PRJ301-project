@@ -33,13 +33,13 @@
         <servlet-class>Controller.LogoutControll</servlet-class>
     </servlet>
     <servlet>
-<<<<<<< HEAD
+
         <servlet-name>UpdateController</servlet-name>
         <servlet-class>Controller.UpdateController</servlet-class>
-=======
+
         <servlet-name>DeleteallCart</servlet-name>
         <servlet-class>Controller.DeleteallCart</servlet-class>
->>>>>>> 1929ab5df512aa2a8920e5800f53c849b2acd778
+
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
@@ -154,13 +154,10 @@
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-<<<<<<< HEAD
         <servlet-name>UpdateController</servlet-name>
         <url-pattern>/updateGoesBrrr</url-pattern>
-=======
         <servlet-name>DeleteallCart</servlet-name>
         <url-pattern>/delete-cart-all</url-pattern>
->>>>>>> 1929ab5df512aa2a8920e5800f53c849b2acd778
     </servlet-mapping>
     <session-config>
         <session-timeout>

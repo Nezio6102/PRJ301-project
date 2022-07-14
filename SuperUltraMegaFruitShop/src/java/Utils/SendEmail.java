@@ -29,8 +29,8 @@ public class SendEmail {
         properties.put("mail.smtp.host", "smtp.gmail.com");
         properties.put("mail.smtp.port", "587");
 
-        String myAccount = "supamegaultrafruitshop@gmail.com";
-        String pass = "qxviqreavmwiwlxn";
+        String myAccount = "supamegaultraultimafruitshop@gmail.com";
+        String pass = "spyumkqhijdcpgdk";
 
         Session session = Session.getInstance(properties, new Authenticator() {
             @Override
