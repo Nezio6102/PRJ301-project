@@ -35,6 +35,7 @@ public class adminController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        final int PAGE_SIZE = 10;
         try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             if (request.getParameter("customer") != null) {
@@ -63,13 +64,13 @@ public class adminController extends HttpServlet {
                         + "                    Role\n"
                         + "                </th>\n"
                         + "            </tr>");
-                
+
                 ArrayList<User> list = u.getAll();
-                
+
                 request.setAttribute("list", list);
-                
+
             }
-         
+
             if (request.getParameter("product") != null) {
                 ProductDAO p = new ProductDAO();
                 request.setAttribute("table_creator", "<tr>\n"
@@ -95,13 +96,24 @@ public class adminController extends HttpServlet {
                         + "                <th>\n"
                         + "                    img_Link\n"
                         + "                </th>\n"
-                        + "                <th>\n"
-                        + "                    Description\n"
-                        + "                </th>\n"
                         + "            </tr>");
                 List<Products> list2 = p.getAllProducts();
                 request.setAttribute("list2", list2);
-                
+                int page = 1;
+                String pageStr = request.getParameter("page");
+                if (pageStr != null) {
+                    page = Integer.parseInt(pageStr);
+                }
+                int totalProducts = p.getTotalProducts();
+                int totalPages = totalProducts / PAGE_SIZE;
+                if (totalPages % PAGE_SIZE != 0) {
+                    totalPages += 1;
+                }
+                List<Products> listAllProducts = p.getProductsWithPagging(page, PAGE_SIZE);
+
+                request.setAttribute("page", page);
+                request.setAttribute("totalPages", totalPages);
+                request.setAttribute("list2", listAllProducts);
             }
             request.getRequestDispatcher("AdminIndex.jsp").forward(request, response);
         }

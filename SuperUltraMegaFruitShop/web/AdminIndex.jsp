@@ -16,6 +16,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="./Login V9_files/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="./Login V9_files/main.css">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/main.css">
     </head>
     <style>
         .topbar {
@@ -70,6 +72,57 @@
             padding-top: 20px;
             margin-top: 10vh;
         }
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+
+        input[type=submit] {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+        }
+
+        .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
     </style>
     <body style="background-color: #abdde5">
 
@@ -103,8 +156,8 @@
                         <td>${item.getEmail()}</td>
                         <td>${item.getCity()}</td>
                         <td>${item.getRole()}</td>
-                        <td><a href="Edit?id=${item.getUserID()}&mod=update">Update</td>
-                        <td><a href="Edit?id=${item.getUserID()}&mod=delete">Delete</td>
+                        <td><a href="Edit?id=${item.getUserID()}&mod=update&type=user">Update</td>
+                        <td><a href="Edit?id=${item.getUserID()}&mod=delete&type=user">Delete</td>
                     </tr>
                 </c:forEach>
 
@@ -118,14 +171,35 @@
                         <td>${item.getDate_expriration()}</td>
                         <td>${item.getP_price()}</td>
                         <td>
-                            <input type ="text" value="${item.getP_img()}"
-                        </td>
-                        <td>${item.getDesc()}</td>
-                        <td><a href="Edit?id=${item.getP_id()}&mod=update">Update</td>
-                        <td><a href="Edit?id=${item.getP_id()}&mod=delete">Delete</td>
+                            <input disabled type ="text" value="${item.getP_img()}">
+                                   </td>
+                        <td><a href="Edit?id=${item.getP_id()}&mod=update&type=product">Update</td>
+                        <td><a href="Edit?id=${item.getP_id()}&mod=delete&type=product">Delete</td>
                     </tr>
                 </c:forEach>
             </table>
+                <c:choose>
+                    <c:when test="${list2==null || listAllProducts.size()==0}">
+                        
+                    </c:when>
+                    <c:otherwise>
+                        <div class="row ">
+                            <div class="col-lg-12 text-center">
+                                <div class="pagination-wrap">
+                                    <ul>
+                                        <li><a href="adminController?product=1&page=${page-1}">Prev</a></li>
+                                            <c:forEach begin="1" end="${totalPages}" var="i">
+                                            <li><a class="${i == page?"active":""}" href="adminController?product=1&page=${i}">${i}</a></li>
+                                            </c:forEach>
+                                        <li><a href="adminController?product=1&page=${page+1}">Next</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </c:otherwise>
+                </c:choose>
+            ${ErrorGoesHere}
+            ${EditGoesHere}
 
         </div>
 

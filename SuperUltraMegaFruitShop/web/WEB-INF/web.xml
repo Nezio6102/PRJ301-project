@@ -32,6 +32,10 @@
         <servlet-name>LogoutControll</servlet-name>
         <servlet-class>Controller.LogoutControll</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UpdateController</servlet-name>
+        <servlet-class>Controller.UpdateController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/LoginController</url-pattern>
@@ -143,6 +147,10 @@
     <servlet-mapping>
         <servlet-name>LogoutControll</servlet-name>
         <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateController</servlet-name>
+        <url-pattern>/updateGoesBrrr</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

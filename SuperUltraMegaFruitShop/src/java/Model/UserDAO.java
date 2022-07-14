@@ -222,6 +222,35 @@ public class UserDAO {
             System.out.println("DelbyID error " + e.getMessage());
         }
     }
+    public User getUserById(String id) {
+        try {
+            String sql;
+            stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            sql = "select * from account where a_id ='" + id + "'";
+            rs = stm.executeQuery(sql);
+            while (rs.next()) {
+                User u = new User(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(5));
+                return u;
+            }
+        } catch (Exception e) {
+            System.out.println("getByidErr"+e.getMessage());
+        }
+
+        return null;
+    }
+
+   
+
+    public void updateUser(String uID, String Username, String Fullname, String phone, String email, String city, String role) {
+        try {
+            stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            String strUpdate = "update account set username='" + Username + "',fullname='"+Fullname+"',phone='"+phone+"',email='"+email+"',city='"+city+"',role='"+role+"' where a_id='" + uID + "'";
+            stm.execute(strUpdate);
+            System.out.println("Update success");
+        } catch (Exception e) {
+            System.out.println("update Error:" + e.getMessage());
+        }
+    }
 
    
 }

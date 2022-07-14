@@ -188,7 +188,9 @@ public class ProductDAO {
         }
         return null;
     }
-
+        
+        
+    
     public static void main(String[] args) {
         ProductDAO dao = new ProductDAO();
         List<Products> listAllProducts = dao.getProductRandom();
@@ -197,5 +199,29 @@ public class ProductDAO {
         }
 
     }
+
+    public void deleteProduct(String id) {
+        try {
+            stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            String strDelete = "Delete from products where product_id='" + id + "'";
+            stm.execute(strDelete);
+
+        } catch (Exception e) {
+            System.out.println("DelbyID error " + e.getMessage());
+        }
+    }
+
+    public void updateProduct(String p_id, String pname, String qty, String cate, String date_manu, String Date_Exp, String price, String img) {
+        try {
+            stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            String strUpdate = "update products set product_name='" + pname + "',product_quantity='"+qty+"',category_id='"+cate+"',date_manufacture='"+date_manu+"',date_expriration='"+Date_Exp+"',list_price='"+price+"',product_img='"+img+"' where product_id='" + p_id + "'";
+            System.out.println(strUpdate);
+            stm.execute(strUpdate);
+            System.out.println("Update success");
+        } catch (Exception e) {
+            System.out.println("update Error:" + e.getMessage());
+        }
+    }
+    
 
 }
