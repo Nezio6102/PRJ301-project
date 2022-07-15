@@ -12,6 +12,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.sql.Date;
 
 /**
@@ -34,6 +35,7 @@ public class UpdateController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+            HttpSession session = request.getSession();
             UserDAO u = new UserDAO();
             ProductDAO p = new ProductDAO();
             if (request.getParameter("customer") != null) {
@@ -43,15 +45,23 @@ public class UpdateController extends HttpServlet {
                 String phone = request.getParameter("phone");
                 String email = request.getParameter("email");
                 String city = request.getParameter("city");
-                String role = request.getParameter("role");
-                if (uID==null||Username == null || Fullname == null || phone == null || email == null || city == null || role == null) {
+                //String role = request.getParameter("role");
+
+                if (uID == null || Username == null || Fullname == null || phone == null || email == null || city == null) {
                     request.setAttribute("ErrorGoesHere", "Fill the form plzzzz.");
                     request.getRequestDispatcher("Edit?id=1&mod=update&type=user").forward(request, response);
                 } else {
-                    u.updateUser(uID,Username, Fullname, phone, email, city, role);
-                    response.sendRedirect("adminController?customer=1");
+                    if (session.getAttribute("account").equals("admin")) {
+                        u.updateUser(uID, Username, Fullname, phone, email, city, "Customer");
+                        response.sendRedirect("adminController?customer=1");
+                    }
+                    else {
+                        u.updateUser(uID, Username, Fullname, phone, email, city, "Customer");
+                        response.sendRedirect("UserDetail?account="+session.getAttribute("account"));
+                    }
                 }
-            }else {
+
+            } else {
                 String p_id = request.getParameter("pID");
                 String pname = request.getParameter("pname");
                 String qty = request.getParameter("qty");
@@ -60,8 +70,8 @@ public class UpdateController extends HttpServlet {
                 String Date_Exp = String.valueOf(Date.valueOf(request.getParameter("exp")));
                 String price = request.getParameter("price");
                 String img = request.getParameter("img");
-                img= img.substring(1, img.length()-1);
-                p.updateProduct(p_id,pname,qty,cate,date_manu,Date_Exp,price,img);
+                img = img.substring(1, img.length() - 1);
+                p.updateProduct(p_id, pname, qty, cate, date_manu, Date_Exp, price, img);
                 response.sendRedirect("adminController?product=1");
             }
         }

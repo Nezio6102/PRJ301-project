@@ -53,7 +53,6 @@ public class LoginController extends HttpServlet {
                 if (u.checkCredential(account, pass)) {
                     //System.out.println(u.checkRole(account));
                     session.setAttribute("account", account);
-                    session.setAttribute("loginText", "LDogout");
                     switch (u.checkRole(account)) {
 
                         case "admin":
@@ -72,8 +71,10 @@ public class LoginController extends HttpServlet {
                     }
                 } else {
                     if (u.checkIfAccountExist(account)) {
+                        
                         request.setAttribute("returnMsg", "Wrong Password");
                     } else {
+                        System.out.println(u.checkIfAccountExist(account));
                         request.setAttribute("returnMsg", "Account not exist.");
                     }
                     request.getRequestDispatcher("Login.jsp").forward(request, response);

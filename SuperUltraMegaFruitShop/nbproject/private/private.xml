@@ -5,20 +5,29 @@
             <url>src/java/Model/ProductDAO.java</url>
             <bookmark id="1">
                 <name/>
-                <line>214</line>
+                <line>237</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/HOCTAP/HomeWk/PRJ/Project/FINALPRJ/Git/PRJ301-project/SuperUltraMegaFruitShop/src/java/Model/UserDAO.java</file>
             <file>file:/E:/HOCTAP/HomeWk/PRJ/Project/FINALPRJ/Git/PRJ301-project/SuperUltraMegaFruitShop/src/java/Controller/adminController.java</file>
+            <file>file:/E:/HOCTAP/HomeWk/PRJ/Project/FINALPRJ/Git/PRJ301-project/SuperUltraMegaFruitShop/src/java/Controller/forgotController.java</file>
+            <file>file:/E:/HOCTAP/HomeWk/PRJ/Project/FINALPRJ/Git/PRJ301-project/SuperUltraMegaFruitShop/web/detail.jsp</file>
+            <file>file:/E:/HOCTAP/HomeWk/PRJ/Project/FINALPRJ/Git/PRJ301-project/SuperUltraMegaFruitShop/web/Register_2.jsp</file>
+            <file>file:/E:/HOCTAP/HomeWk/PRJ/Project/FINALPRJ/Git/PRJ301-project/SuperUltraMegaFruitShop/web/shop.jsp</file>
+            <file>file:/E:/HOCTAP/HomeWk/PRJ/Project/FINALPRJ/Git/PRJ301-project/SuperUltraMegaFruitShop/src/java/Controller/RegisterController.java</file>
+            <file>file:/E:/HOCTAP/HomeWk/PRJ/Project/FINALPRJ/Git/PRJ301-project/SuperUltraMegaFruitShop/src/java/Model/UserDAO.java</file>
+            <file>file:/E:/HOCTAP/HomeWk/PRJ/Project/FINALPRJ/Git/PRJ301-project/SuperUltraMegaFruitShop/src/java/Controller/DetailControll.java</file>
+            <file>file:/E:/HOCTAP/HomeWk/PRJ/Project/FINALPRJ/Git/PRJ301-project/SuperUltraMegaFruitShop/src/java/Model/Products.java</file>
+            <file>file:/E:/HOCTAP/HomeWk/PRJ/Project/FINALPRJ/Git/PRJ301-project/SuperUltraMegaFruitShop/web/components/header.jsp</file>
+            <file>file:/E:/HOCTAP/HomeWk/PRJ/Project/FINALPRJ/Git/PRJ301-project/SuperUltraMegaFruitShop/web/WEB-INF/web.xml</file>
+            <file>file:/E:/HOCTAP/HomeWk/PRJ/Project/FINALPRJ/Git/PRJ301-project/SuperUltraMegaFruitShop/src/java/Model/CategoryDao.java</file>
             <file>file:/E:/HOCTAP/HomeWk/PRJ/Project/FINALPRJ/Git/PRJ301-project/SuperUltraMegaFruitShop/web/AdminIndex.jsp</file>
             <file>file:/E:/HOCTAP/HomeWk/PRJ/Project/FINALPRJ/Git/PRJ301-project/SuperUltraMegaFruitShop/src/java/Controller/AdminTableController.java</file>
-            <file>file:/E:/HOCTAP/HomeWk/PRJ/Project/FINALPRJ/Git/PRJ301-project/SuperUltraMegaFruitShop/web/Register_2.jsp</file>
-            <file>file:/E:/HOCTAP/HomeWk/PRJ/Project/FINALPRJ/Git/PRJ301-project/SuperUltraMegaFruitShop/src/java/Controller/RegisterController.java</file>
             <file>file:/E:/HOCTAP/HomeWk/PRJ/Project/FINALPRJ/Git/PRJ301-project/SuperUltraMegaFruitShop/src/java/Controller/UpdateController.java</file>
+            <file>file:/E:/HOCTAP/HomeWk/PRJ/Project/FINALPRJ/Git/PRJ301-project/SuperUltraMegaFruitShop/src/java/Model/ProductDAO.java</file>
         </group>
     </open-files>
 </project-private>

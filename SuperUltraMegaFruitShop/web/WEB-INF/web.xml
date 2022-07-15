@@ -33,42 +33,13 @@
         <servlet-class>Controller.LogoutControll</servlet-class>
     </servlet>
     <servlet>
-
         <servlet-name>UpdateController</servlet-name>
         <servlet-class>Controller.UpdateController</servlet-class>
-
+    </servlet>
+    <servlet>
         <servlet-name>DeleteallCart</servlet-name>
         <servlet-class>Controller.DeleteallCart</servlet-class>
-
     </servlet>
-    <servlet-mapping>
-        <servlet-name>LoginController</servlet-name>
-        <url-pattern>/LoginController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>RegisterController</servlet-name>
-        <url-pattern>/RegisterController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>EmailController</servlet-name>
-        <url-pattern>/EmailController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ConfirmController</servlet-name>
-        <url-pattern>/ConfirmController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>forgotController</servlet-name>
-        <url-pattern>/forgotController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>adminController</servlet-name>
-        <url-pattern>/adminController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>EditController</servlet-name>
-        <url-pattern>/Edit</url-pattern>
-    </servlet-mapping>
     <servlet>
         <servlet-name>HomeController</servlet-name>
         <servlet-class>Controller.HomeController</servlet-class>
@@ -109,6 +80,38 @@
         <servlet-name>CheckoutControll</servlet-name>
         <servlet-class>Controller.CheckoutControll</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UserDetail</servlet-name>
+        <servlet-class>Controller.UserDetail</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginController</servlet-name>
+        <url-pattern>/LoginController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterController</servlet-name>
+        <url-pattern>/RegisterController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EmailController</servlet-name>
+        <url-pattern>/EmailController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConfirmController</servlet-name>
+        <url-pattern>/ConfirmController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>forgotController</servlet-name>
+        <url-pattern>/forgotController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>adminController</servlet-name>
+        <url-pattern>/adminController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditController</servlet-name>
+        <url-pattern>/Edit</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>HomeController</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -156,12 +159,16 @@
     <servlet-mapping>
         <servlet-name>UpdateController</servlet-name>
         <url-pattern>/updateGoesBrrr</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>DeleteallCart</servlet-name>
         <url-pattern>/delete-cart-all</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserDetail</servlet-name>
+        <url-pattern>/UserDetail</url-pattern>
+    </servlet-mapping>
     <session-config>
-        <session-timeout>
-            30
-        </session-timeout>
+        <session-timeout>30</session-timeout>
     </session-config>
 </web-app>
