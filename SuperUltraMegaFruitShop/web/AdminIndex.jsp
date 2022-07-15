@@ -1,8 +1,4 @@
-<%-- 
-    Document   : AdminIndex
-    Created on : Jul 3, 2022, 4:48:37 PM
-    Author     : Nezio
---%>
+
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
