@@ -43,19 +43,19 @@ public class forgotController extends HttpServlet {
                 String newPass = "";
 
                 for (int i = 0; i < 4; i++) {
-                    newPass += (char)('a' + r.nextInt(26));
+                    newPass += (char) ('a' + r.nextInt(26));
                 }
-                for(int i=0;i<4;i++){
+                for (int i = 0; i < 4; i++) {
                     newPass += r.nextInt(10);
                 }
-                u.updatePass(email, newPass);
-                try{
-                SendEmail.SendMail(email,"Your pass is: " +newPass);
-                }
-                catch (Exception e){
+
+                try {
+                    SendEmail.SendMail(email, "Your pass is: " + newPass);
+                    u.updatePass(email, newPass);
+                } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
-                
+
                 request.setAttribute("returnMsg", "Check email for new password");
                 request.getRequestDispatcher("forgotPassword.jsp").forward(request, response);
             }

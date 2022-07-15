@@ -39,14 +39,14 @@ public class RegisterController extends HttpServlet {
             if (request.getParameter("login") != null) {
                 request.getRequestDispatcher("Login.jsp").forward(request, response);
             }
-            String username="";
-            String email="";
-            String password="";
-            String re_enterPass="";
+            String username = "";
+            String email = "";
+            String password = "";
+            String re_enterPass = "";
 
             UserDAO u = new UserDAO();
             HttpSession session = request.getSession();
-            
+
             if (request.getParameter("register") != null) {
                 username = request.getParameter("username");
                 email = request.getParameter("email");
@@ -65,6 +65,8 @@ public class RegisterController extends HttpServlet {
                 } else {
                     if (u.checkIfAccountExist(username)) {
                         request.setAttribute("returnMsg", "Account existed. Please log in");
+                    } else if (u.checkIfAccountExist(email)) {
+                        request.setAttribute("returnMsg", "Email existed. Please log in");
                     } else {
                         //u.saveCredential(username, email, password);
 
@@ -75,7 +77,7 @@ public class RegisterController extends HttpServlet {
                         } catch (Exception e) {
                             System.out.println("sendMail err: " + e.getMessage());
                         }
-                        
+
                         session.setAttribute("email", email);
                         session.setAttribute("confCode", confCode);
                         session.setAttribute("username", username);
@@ -107,7 +109,7 @@ public class RegisterController extends HttpServlet {
                     request.getRequestDispatcher("Register_2.jsp").forward(request, response);
                 }
 
-                u.saveCredential((String)session.getAttribute("username"), (String)session.getAttribute("password"), fullname, phone, (String)session.getAttribute("email"), address, role);
+                u.saveCredential((String) session.getAttribute("username"), (String) session.getAttribute("password"), fullname, phone, (String) session.getAttribute("email"), address, role);
                 request.setAttribute("returnMsg", "Successfully. Please log in");
                 request.getRequestDispatcher("Login.jsp").forward(request, response);
             }
