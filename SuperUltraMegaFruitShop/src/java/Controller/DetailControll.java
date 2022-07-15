@@ -4,6 +4,7 @@
  */
 package Controller;
 
+import Model.CategoryDao;
 import Model.ProductDAO;
 import Model.Products;
 import java.io.IOException;
@@ -35,11 +36,14 @@ public class DetailControll extends HttpServlet {
         try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             int productId = Integer.parseInt(request.getParameter("productId"));
-
+            CategoryDao cdao = new CategoryDao();
             Products product = new ProductDAO().getProductById(productId);
-            List<Products> listProductRandom = new ProductDAO().getProductRandom();
+            List<Products> listProductRandom = new ProductDAO().getProductRandom(product.getC_id(),productId);
+            List<Products> listProductRandom2 = new ProductDAO().getProductRandom();
             request.setAttribute("product", product);
+            request.setAttribute("cate", cdao.getCateNameById(product.getC_id()));
             request.setAttribute("ListR", listProductRandom);
+            request.setAttribute("ListR2", listProductRandom2);
             request.getSession().setAttribute("UrlHistory", "detail?productId=" + productId);
             request.getRequestDispatcher("detail.jsp").forward(request, response);
         }

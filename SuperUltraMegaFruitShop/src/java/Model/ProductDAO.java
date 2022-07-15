@@ -167,6 +167,29 @@ public class ProductDAO {
         }
     }
 
+    public List<Products> getProductRandom(int cateID,int productID) {
+        try {
+            List<Products> list = new ArrayList<>();
+            //mo ket noi
+            Connection conn = new DBContext().getConnection();
+            String sql = "SELECT TOP 3 *\n"
+                    + "FROM products\n"
+                    + "where category_id='"+cateID+"'\n"
+                    + "and product_id <> '"+productID+"'\n"
+                    + "ORDER BY NEWID()";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Products product = new Products(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getDate(5),
+                        rs.getDate(6), rs.getFloat(7), rs.getString(8), rs.getString(9));
+                list.add(product);
+            }
+            return list;
+        } catch (Exception ex) {
+            ex.printStackTrace(System.out);
+        }
+        return null;
+    }
     public List<Products> getProductRandom() {
         try {
             List<Products> list = new ArrayList<>();
@@ -191,14 +214,14 @@ public class ProductDAO {
         
         
     
-    public static void main(String[] args) {
-        ProductDAO dao = new ProductDAO();
-        List<Products> listAllProducts = dao.getProductRandom();
-        for (Products listAllProduct : listAllProducts) {
-            System.out.println(listAllProduct);
-        }
-
-    }
+//    public static void main(String[] args) {
+//        ProductDAO dao = new ProductDAO();
+//        List<Products> listAllProducts = dao.getProductRandom();
+//        for (Products listAllProduct : listAllProducts) {
+//            System.out.println(listAllProduct);
+//        }
+//
+//    }
 
     public void deleteProduct(String id) {
         try {

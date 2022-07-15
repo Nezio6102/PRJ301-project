@@ -44,4 +44,17 @@ public class CategoryDao {
         }
 
     }
+
+    public String getCateNameById(int c_id) {
+        switch (c_id) {
+            case 1:
+                return "Frozen";
+            case 2:
+                return "Fresh";
+            case 3:
+                return "Dried";
+            default:
+                throw new AssertionError();
+        }
+    }
 }

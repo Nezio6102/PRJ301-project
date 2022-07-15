@@ -83,7 +83,7 @@
                                                                     <input type="number" placeholder="0">
                                                                 </form>-->
                                 <a href="add-to-cart?productId=${product.p_id}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-                                <p><strong>Categories: </strong>Fruits, Organic</p>
+                                <p><strong>Categories: </strong>${cate}</p>
                             </div>
                             <h4>Share:</h4>
                             <ul class="product-share">
@@ -125,10 +125,41 @@
 
                     </c:forEach>
                 </div>
+                
             </div>
         </div>
         <!-- end more products -->
+        <!<!-- even more!!! -->
+        
+        <div class="more-products mb-150">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2 text-center">
+                        <div class="section-title">	
+                            <h3><span class="orange-text">Random</span> Products</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <c:forEach var="p" items="${ListR2}">
+                        <div class="col-lg-4 col-md-6 text-center">
+                            <div class="single-product-item">
+                                <div class="product-image">
+                                    <a href="detail?productId=${p.p_id}"><img src="${p.p_img}" alt=""></a>
+                                </div>
+                                <h3>${p.p_name}</h3>
+                                <p class="product-price"><span>Per Kg</span> ${p.p_price}$ </p>
+                                <a href="add-to-cart?productId=${p.p_id}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                            </div>
+                        </div>
 
+                    </c:forEach>
+                </div>
+                
+            </div>
+        </div>
+        
         <!-- logo carousel -->
         <div class="logo-carousel-section">
             <div class="container">
