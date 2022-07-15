@@ -56,14 +56,14 @@
                         <span class="focus-input100"></span>
                     </div>
                     <br>
-                    <div style="text-align: center">
+<!--                    <div style="text-align: center">
                         <select style = "display:inline-block;" onchange="submit" name="select">
                             <option name="Select_role">Choose your role: </option>
                             <option name="customer">Customer</option>
                             <option name="shipper">Shipper</option>
                         </select>
                         <span class="focus-input100"></span>
-                    </div>
+                    </div>-->
                     <br><!-- comment -->
                     <div class="container-login100-form-btn">
                         <input type="submit" value="SIGN UP" name="register2" class="login100-form-btn">

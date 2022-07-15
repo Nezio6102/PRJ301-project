@@ -103,13 +103,13 @@ public class RegisterController extends HttpServlet {
                 phone = request.getParameter("Phone");
                 address = request.getParameter("Address");
 
-                role = request.getParameter("select");
+                //role = request.getParameter("select");
                 if (!u.checkPhone(phone)) {
                     request.setAttribute("returnMsg", "Phone number error");
                     request.getRequestDispatcher("Register_2.jsp").forward(request, response);
                 }
 
-                u.saveCredential((String) session.getAttribute("username"), (String) session.getAttribute("password"), fullname, phone, (String) session.getAttribute("email"), address, role);
+                u.saveCredential((String) session.getAttribute("username"), (String) session.getAttribute("password"), fullname, phone, (String) session.getAttribute("email"), address, "Customer");
                 request.setAttribute("returnMsg", "Successfully. Please log in");
                 request.getRequestDispatcher("Login.jsp").forward(request, response);
             }
