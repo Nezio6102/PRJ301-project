@@ -89,7 +89,7 @@
                         <div class="contact-form-wrap">
                             <div class="contact-form-box">
                                 <h4><i class="fas fa-map"></i> Shop Address</h4>
-                                <p>34/8, East Hukupara <br> Gifirtok, Sadan. <br> Country Name</p>
+                                <p>123, Thanh Xuan <br> Ha Noi. <br> VietNam</p>
                             </div>
                             <div class="contact-form-box">
                                 <h4><i class="far fa-clock"></i> Shop Hours</h4>
@@ -97,7 +97,7 @@
                             </div>
                             <div class="contact-form-box">
                                 <h4><i class="fas fa-address-book"></i> Contact</h4>
-                                <p>Phone: +00 111 222 3333 <br> Email: support@fruitkha.com</p>
+                                <p>Phone: +88 356959668 <br> Email: support@fruitkha.com</p>
                             </div>
                         </div>
                     </div>

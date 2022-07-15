@@ -20,7 +20,7 @@ public class ProductDAO {
 
     Connection cnn; //ket noi co so du lieu(CSDL)
     Statement stm; //thuc hien cac cau lenh sql
-    ResultSet rs;
+    ResultSet rs;   
 
     public ProductDAO() {
         connectDB();

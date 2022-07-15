@@ -12,16 +12,17 @@
             <div class="col-lg-3 col-md-6">
                 <div class="footer-box about-widget">
                     <h2 class="widget-title">About us</h2>
-                    <p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+                    <p>For in order that you may perceive for the least pardon, whence all this error was born, the pleasure of accusing and praising the pain, I will open the whole thing, and those things which are.
+</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="footer-box get-in-touch">
                     <h2 class="widget-title">Get in Touch</h2>
                     <ul>
-                        <li>34/8, East Hukupara, Gifirtok, Sadan.</li>
+                        <li>123, Thanh Xuan, Ha Noi.</li>
                         <li>support@fruitkha.com</li>
-                        <li>+00 111 222 3333</li>
+                        <li>+88 356959668</li>
                     </ul>
                 </div>
             </div>
