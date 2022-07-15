@@ -44,15 +44,15 @@
                         Continue To Sign Up
                     </span>
                     <div class="wrap-input100 validate-input m-b-20" data-validate="Enter your full name">
-                        <input class="input100" type="text" name="Fullname" value="${retFullname}" placeholder="Fullname">
+                        <input required="true"class="input100" type="text" name="Fullname" value="${retFullname}" placeholder="Fullname">
                         <span class="focus-input100"></span>
                     </div>
                     <div class="wrap-input100 validate-input m-b-20" data-validate="Enter your phone number">
-                        <input class="input100" type="text" name="Phone" value="${retPhone}" placeholder="Phone Number">
+                        <input required="true" class="input100" type="text" name="Phone" value="${retPhone}" placeholder="Phone Number">
                         <span class="focus-input100"></span>
                     </div>
                     <div class="wrap-input100 validate-input m-b-20" data-validate="Give your father your address">
-                        <input class="input100" type="text" name="Address" value="${retAddress}" placeholder="Your address">
+                        <input required="true" class="input100" type="text" name="Address" value="${retAddress}" placeholder="Your address">
                         <span class="focus-input100"></span>
                     </div>
                     <br>
