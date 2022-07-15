@@ -168,10 +168,15 @@
                         <input required="true" type="text" id="fname" name="city" value='${user.getCity()}'>
                     </div>
                 </div>
-                
+
                 <br>
                 <div class="row">
                     <input type="submit" name='customer' value="Submit">
+                </div>
+                <div class="text-center">
+                    <a href="./home" class="txt2 hov1">
+                        Home
+                    </a>
                 </div>
             </form>
         </div>
