@@ -1,8 +1,4 @@
-<%-- 
-    Document   : ConfirmEmail
-    Created on : Jun 28, 2022, 12:34:58 AM
-    Author     : Nezio
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

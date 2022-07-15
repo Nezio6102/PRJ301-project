@@ -42,8 +42,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="Login.jsp">Login</a>
                                 </li>
-                            </c:if>
-                            </li>
+                            </c:if>                       
                             <li>
                                 <form class="d-flex">
                                     <a class="btn btn-outline-dark" href="carts">
