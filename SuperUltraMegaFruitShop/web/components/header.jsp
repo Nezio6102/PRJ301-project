@@ -53,6 +53,9 @@
                                     </a>
                                 </form>
                             </li>
+                            <li>
+                                <a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+                            </li>
                         </ul>
                     </nav>
                     <a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
